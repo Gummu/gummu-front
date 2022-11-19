@@ -1,7 +1,9 @@
 import { useState } from "react";
 
 export const Player = () => {
-    const [isPlaying, setIsPlaying] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [reader, setReader] = useState(0);
+    const [sec, setSec] = useState(0);
 
     const togglePlay = () => {
         setIsPlaying(!isPlaying);
@@ -59,16 +61,13 @@ export const Player = () => {
                      </div>
                     <div className="progress flex">
                         <div className="m-auto">
-                            <input type="range" className="w-[1700px] max-w-screen-md range" value={20} />
+                            <input type="range" className="w-[1700px] max-w-screen-md range" value={reader} onChange={val => setReader(val)} max={sec}/>
                         </div>
                     </div>
                 </div>
 
                 {/* volume and repeat */}
                 <div className="volume flex-none w-52 pt-10">
-                    {/* <div className="flex items-center">
-                        <div className="w-24 h-24 bg-red-500"></div>
-                    </div> */}
                 </div>
             </div>
 
