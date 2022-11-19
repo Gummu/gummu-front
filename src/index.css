@@ -42,7 +42,7 @@ code {
     box-shadow: #fff 0px 0px 1px 1px;
 }
 
-.range {
+/* .range {
     height: 6px;
     -webkit-appearance: none;
     appearance: none;
@@ -61,7 +61,7 @@ code {
     border: 7px solid #fff;
     box-shadow: -2007px 0 0 2000px #ec8936;
     position: relative;
-}
+} */
 
 albumcard, 
 img {
