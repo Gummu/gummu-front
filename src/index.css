@@ -62,3 +62,12 @@ code {
     box-shadow: -2007px 0 0 2000px #ec8936;
     position: relative;
 }
+
+albumcard, 
+img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}

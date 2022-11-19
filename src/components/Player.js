@@ -59,7 +59,7 @@ export const Player = () => {
                      </div>
                     <div className="progress flex">
                         <div className="m-auto">
-                            <input type="range" className="w-[1700px] max-w-screen-md range" />
+                            <input type="range" className="w-[1700px] max-w-screen-md range" value={20} />
                         </div>
                     </div>
                 </div>
