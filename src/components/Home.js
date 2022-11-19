@@ -3,6 +3,8 @@ import { Cover } from "./Cover";
 import { covers } from "../data";
 import SearchBar from "./SearchBar";
 import { Player } from "./Player";
+import TopSongs from "./TopSongs";
+import HeroSection from "./HeroSection";
 
 export default function Home() {
     return (
@@ -19,7 +21,12 @@ export default function Home() {
 
                 <div className="grow overflow-auto p-5 pb-24 w-full content">
                     <div className="flex">
-                        <div className="w-48 bg-red-500"></div>
+                        <div className="mt-4 ml-4 mr-10">
+                            <HeroSection />
+                        </div>
+                        <div className="w-3/12 mt-4">
+                            <TopSongs />
+                        </div>
                     </div>
                 </div>
             </div>

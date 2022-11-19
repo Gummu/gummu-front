@@ -28,7 +28,7 @@ export default function HeroSection() {
                 </div>
 
                 <div className="relative z-0" name="background">
-                    <img src={image} className="h-[373px]" />
+                    <img src={image} className="h-[373px]" alt="qwerty" />
                 </div>
             </div>
         </div>

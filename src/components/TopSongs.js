@@ -7,7 +7,7 @@ function ChartCard(props) {
     return (
         <div className="bg-dark_alt rounded-[20px] flex space-x-[14px] py-[17px] hover:bg-slate-800">
             <div className="flex-none px-[17px]">
-                <img src={props.song} className="w-[63px] h-[63px]" />
+                <img src={props.song} className="w-[63px] h-[63px]" alt="qwertyuiop" />
             </div>
             <div className="flex flex-col flex-1">
                 <p className="font-bold font-Quicksand text-[17px] leading-[120%] mb-[4px]">{props.title}</p>
