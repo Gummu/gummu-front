@@ -3,16 +3,16 @@ import song1 from "../images/song1.png"
 import song2 from "../images/song2.png"
 import song3 from "../images/song3.png"
 
-export default function ChartCard() {
+function ChartCard(props) {
     return (
-        <div className="bg-dark_alt rounded-[20px] flex space-x-[14px] py-[17px]">
+        <div className="bg-dark_alt rounded-[20px] flex space-x-[14px] py-[17px] hover:bg-slate-800">
             <div className="flex-none px-[17px]">
-                <img src={song1} className="w-[63px] h-[63px]" />
+                <img src={props.song} className="w-[63px] h-[63px]" />
             </div>
             <div className="flex flex-col flex-1">
-                <p className="font-bold font-Quicksand text-[17px] leading-[120%] mb-[4px]">Golden age of 80s</p>
-                <p className="font-[400px] font-Quicksand text-[12px] leading-[120%] mb-[8px]">Sean swadder</p>
-                <p className="font-[400px] font-Quicksand text-[12px] leading-[120%]">2:34:45</p>
+                <p className="font-bold font-Quicksand text-[17px] leading-[120%] mb-[4px]">{props.title}</p>
+                <p className="font-[400px] font-Quicksand text-[12px] leading-[120%] mb-[8px]">{props.artist}r</p>
+                <p className="font-[400px] font-Quicksand text-[12px] leading-[120%]">{props.duration}</p>
             </div>
 
             <div className="flex flex-none justify-center items-center pr-[21px]">
@@ -25,4 +25,16 @@ export default function ChartCard() {
             </div>
         </div>
     )
+}
+
+
+export default function TopSongs() {
+    return (
+        <div className="flex-1 flex flex-col space-y-[12px]">
+            <p className="font-Quicksand text-[24px] leading-[120%] font-extrabold">Top Songs</p>
+            <ChartCard song={song1} title={"Golden age of 80s"} artist={"Sean swadder"} duration={"2:34:45"}/>
+            <ChartCard song={song2} title={"Reggae “n” blues"} artist={"Dj YK mule"} duration={"1:02:42"}/>
+            <ChartCard song={song3} title={"Tomorrow’s tunes"} artist={"Obi Datti"} duration={"2:01:25"}/>
+        </div>
+    );
 }
