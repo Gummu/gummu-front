@@ -9,8 +9,10 @@ module.exports = {
         dark: '#1d2123',
         light_gray: '##ffffff40',
         dark_alt: '#1A1E1F'
-      }
-
+      },
+      fontFamily: {
+        Quicksand: ["Quicksand", "sans-serif"],
+       },
     },
   },
   plugins: [],
