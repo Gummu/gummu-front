@@ -30,20 +30,20 @@ const responsive = {
 };
 
 const items = [
-    <AlbumCard image={album1} title={"Life in a bubble"} artist={"The van"} />,
+    <AlbumCard image={album7} title={"Blind"} artist={"Wiz zee"} />,
+    <AlbumCard image={album5} title={"Cancelled"} artist={"Enimen"} />,
     <AlbumCard image={album2} title={"Mountain"} artist={"Krisx"} />,
+    <AlbumCard image={album6} title={"Nomad"} artist={"Makroi eli"} />,
+    <AlbumCard image={album1} title={"Life in a bubble"} artist={"The van"} />,
+    <AlbumCard image={album8} title={"Blind"} artist={"Wiz zee"} />,
+    <AlbumCard image={album10} title={"Blind"} artist={"Wiz zee"} />,
+    <AlbumCard image={album9} title={"Blind"} artist={"Wiz zee"} />,
     <AlbumCard image={album3} title={"Limits"} artist={"John Dillion"} />,
     <AlbumCard image={album4} title={"Everthing's block"} artist={"Ameed"} />,
-    <AlbumCard image={album5} title={"Cancelled"} artist={"Enimen"} />,
-    <AlbumCard image={album6} title={"Nomad"} artist={"Makroi eli"} />,
-    <AlbumCard image={album7} title={"Blind"} artist={"Wiz zee"} />,
-    <AlbumCard image={album8} title={"Blind"} artist={"Wiz zee"} />,
-    <AlbumCard image={album9} title={"Blind"} artist={"Wiz zee"} />,
-    <AlbumCard image={album10} title={"Blind"} artist={"Wiz zee"} />,
 ];
 
 
-export default function NewReleases() {
+export default function NewRelease() {
     return (
         <AliceCarousel
         mouseTracking
