@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -11,11 +11,11 @@
 html {
     max-height: 100vh;
     max-width: 100vw;
-    background-color: #1A1E1F;
+    background-color: #1a1e1f;
 }
 
-input[type="radio"]:checked + label{
-  @apply fill-yellow-500;
+input[type="radio"]:checked + label {
+    @apply fill-yellow-500;
 }
 
 body {
@@ -36,4 +36,29 @@ code {
 
 .max-w-screen {
     max-width: 100vw;
+}
+
+.shadow {
+    box-shadow: #fff 0px 0px 1px 1px;
+}
+
+.range {
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #5e5e5e;
+    outline: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 4px;
+    height: 4px;
+    background: #ec8936;
+    cursor: pointer;
+    border: 7px solid #fff;
+    box-shadow: -2007px 0 0 2000px #ec8936;
+    position: relative;
 }
