@@ -119,11 +119,108 @@ function ArtistProfile() {
                 {/* 1 */}
                 <div className="h-[300px] grow">
                     <div className="flex flex-col">
-                        <h1 className="pt-4 pl-4 text-xl">Most Listened</h1>
+                        <h1 className="text-2xl pt-4 pl-4">Most Listened</h1>
+                        <div className="w-full h-20">
+                            <div className="flex w-full h-full hover:bg-dark_alt">
+                                <div className="my-auto">
+                                    <div className="ml-10 w-12 h-12 flex">
+                                        <img src="/laylow1.jpeg" alt="pp" />
+                                        <div className="ml-2 my-auto">
+                                            <h3 className="text-sm ml-4 w-24">
+                                                IVERSON
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex-1"></div>
+                                <div className="my-auto mr-10">2:45</div>
+                            </div>
+                        </div>
+                        <div className="w-full h-20">
+                            <div className="flex w-full h-full hover:bg-dark_alt">
+                                <div className="my-auto">
+                                    <div className="ml-10 w-12 h-12 flex">
+                                        <img src="/laylow3.jpeg" alt="pp" />
+                                        <div className="ml-2 my-auto">
+                                            <h3 className="text-sm ml-4 w-24">
+                                                Vent de l'Est
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex-1"></div>
+                                <div className="my-auto mr-10">2:25</div>
+                            </div>
+                        </div>
+                        <div className="w-full h-20">
+                            <div className="flex w-full h-full hover:bg-dark_alt">
+                                <div className="my-auto">
+                                    <div className="ml-10 w-12 h-12 flex">
+                                        <img src="/laylow1.jpeg" alt="pp" />
+                                        <div className="ml-2 my-auto">
+                                            <h3 className="text-sm ml-4 w-80">
+                                                SPECIAL (ft. Nekfeu & Foushée)
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex-1"></div>
+                                <div className="my-auto mr-10">3:51</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 {/* 2 */}
-                <div className="h-[300px] bg-orange-500 grow"></div>
+                <div className="h-[300px] grow flex flex-col pt-12">
+                <div className="w-full h-20">
+                            <div className="flex w-full h-full hover:bg-dark_alt">
+                                <div className="my-auto">
+                                    <div className="ml-10 w-12 h-12 flex">
+                                        <img src="/laylow6.jpeg" alt="pp" />
+                                        <div className="ml-2 my-auto">
+                                            <h3 className="text-sm ml-4">
+                                                10'
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex-1"></div>
+                                <div className="my-auto mr-10">3:58</div>
+                            </div>
+                        </div>
+                        <div className="w-full h-20">
+                            <div className="flex w-full h-full hover:bg-dark_alt">
+                                <div className="my-auto">
+                                    <div className="ml-10 w-12 h-12 flex">
+                                        <img src="/laylow1.jpeg" alt="pp" />
+                                        <div className="ml-2 my-auto">
+                                            <h3 className="text-sm ml-4 w-60">
+                                                R9R-Line (ft Damso)
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex-1"></div>
+                                <div className="my-auto mr-10">2:39</div>
+                            </div>
+                        </div>
+                        <div className="w-full h-20">
+                            <div className="flex w-full h-full hover:bg-dark_alt">
+                                <div className="my-auto">
+                                    <div className="ml-10 w-12 h-12 flex">
+                                        <img src="/laylow2.jpeg" alt="pp" />
+                                        <div className="ml-2 my-auto">
+                                            <h3 className="text-sm ml-4">
+                                                MEGATRON
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex-1"></div>
+                                <div className="my-auto mr-10">2:45</div>
+                            </div>
+                        </div>
+                </div>
             </div>
             <div className="profile-page min-h-[300px] flex mt-6">
                 <div className="h-[300px] grow">
