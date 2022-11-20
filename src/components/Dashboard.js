@@ -1,8 +1,10 @@
 import React from "react";
+import DashboardGraph from "./DashboardGraph";
+import DashboardCard from "./DashboardCard";
 
 const Dashboard = () => {
     return (
-        <div className="w-screen h-screen bg-black flex flex-col pb-24 px-4">
+        <div className="w-screen h-screen bg-black flex flex-col pb-28">
             <div className="header h-20 flex">
                 <div className="flex justify-center items-center px-5">
                     <h1 className="text-2xl">Dashboard</h1>
@@ -25,45 +27,47 @@ const Dashboard = () => {
                 <div className="flex-1 flex flex-col">
                     <div className="flex-1 flex">
                         <div className="flex-1 flex flex-col">
-                            <div className="flex-1 flex m-4 justify-center items-center">
+                            <div className="flex-1 flex m-4 justify-center items-center bg-dark_alt">
                                 coucou
                             </div>
-                            <div className="flex-1 flex m-4 justify-center items-center">
+                            <div className="flex-1 flex m-4 justify-center items-center bg-dark_alt">
                                 coucou
                             </div>
                         </div>
                         <div className="flex-1 flex flex-col">
-                            <div className="flex-1 flex m-4 justify-center items-center">
+                            <div className="flex-1 flex m-4 justify-center items-center bg-dark_alt">
                                 coucou
                             </div>
-                            <div className="flex-1 flex m-4 justify-center items-center">
+                            <div className="flex-1 flex m-4 justify-center items-center bg-dark_alt">
                                 coucou
                             </div>
                         </div>
                     </div>
-                    <div className="flex-1 flex">
-                        <div className="h-1/12 w-full m-4 mb-4 flex justify-center items-center">
+                    <div className="flex-1 flex flex-col">
+                        <div className="m-4 mb-4 flex h-full justify-center items-center bg-dark_alt">
                             coucou
                         </div>
                     </div>
                 </div>
-                <div className="flex-1 flex bg-green-500">
-                    <div className="flex-1 flex flex-col bg-red-500">
-                        <div className="flex-1 flex flex-col bg-yellow-500">
-                            <div className="flex-1 flex bg-green-500 justify-center items-center">
+                <div className="flex-1 flex">
+                    <div className="flex-1 flex flex-col">
+                        <div className="flex-1 flex flex-col">
+                            <div className="flex-1 flex m-4 justify-center items-center bg-dark_alt">
                                 coucou
                             </div>
-                            <div className="flex-1 flex justify-center items-center">
+                            <div className="flex-1 flex m-4 justify-center items-center bg-dark_alt">
                                 coucou
                             </div>
                         </div>
-                        <div className="flex-1 flex bg-violet-500 justify-center items-center">coucou</div>
-                    </div>
-                    <div className="flex-1 flex flex-col bg-blue-500">
-                        <div className="flex-1 flex basis-1/3 bg-red-500 justify-center items-center">
+                        <div className="flex-1 flex m-4 bg-dark_alt justify-center items-center">
                             coucou
                         </div>
-                        <div className="flex-1 flex basis-2/3 bg-green-500 justify-center items-center">
+                    </div>
+                    <div className="flex-1 flex flex-col">
+                        <div className="flex-1 flex m-4 basis-1/3 bg-dark_alt justify-center items-center">
+                            coucou
+                        </div>
+                        <div className="flex-1 flex m-4 basis-2/3 bg-dark_alt justify-center items-center">
                             coucou
                         </div>
                     </div>

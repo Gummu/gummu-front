@@ -3,7 +3,7 @@ import React from "react";
 
 export default function DashboardCard (props) {
     return (
-        <div className="w-[395px] h-[151px] bg-[#33373b25] flex px-[40px] py-[40px]">
+        <div className="w-full h-full bg-[#33373b25] flex px-[40px] py-[40px]">
             <div className="flex-none mr-[30px]">
                 {props.children}
             </div>
