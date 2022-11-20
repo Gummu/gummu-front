@@ -155,7 +155,7 @@ export default function ArtistProfile() {
                             <button className="px-4 py-2 mr-2 mb-6 text-white bg-black rounded-full border hover:bg-violet-600">
                                 Join€€
                             </button>
-                            <button className="px-4 py-2 mb-6 text-white bg-black rounded-full border hover:bg-yellow-600" onClick={(e) => { notify(); }}>
+                            <button className="px-4 py-2 mb-6 text-white bg-black rounded-full border hover:bg-yellow-600" onClick={(e) => {handleClick() ;notify(); }}>
                                 Donate
                             </button>
                             <div className="grow"></div>
