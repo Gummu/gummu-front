@@ -1,13 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export const Player = () => {
+export const Player = ({url}) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [reader, setReader] = useState(0);
     const [sec, setSec] = useState(0);
-
+    const [audio] = useState(new Audio(url));
     const togglePlay = () => {
         setIsPlaying(!isPlaying);
-    };
+        play();
+    }
+    const play = () => {
+        if (isPlaying) {
+            audio.pause();
+        }
+        else {
+            audio.play();
+        }
+    }
 
     return (
         <div className="w-screen">
