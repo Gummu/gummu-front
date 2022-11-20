@@ -48,27 +48,6 @@ code {
 	border-radius: 50px;
 }
 
-/* .range {
-    height: 6px;
-    -webkit-appearance: none;
-    appearance: none;
-    background: #5e5e5e;
-    outline: none;
-    border-radius: 15px;
-    overflow: hidden;
-}
-.range::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 4px;
-    height: 4px;
-    background: #ec8936;
-    cursor: pointer;
-    border: 7px solid #fff;
-    box-shadow: -2007px 0 0 2000px #ec8936;
-    position: relative;
-} */
-
 albumcard,
 img {
     -webkit-user-select: none;
@@ -82,4 +61,8 @@ img {
 	width: 100%; /* width expands to fit bubble */
 	height: 100%; /* width expands to fit bubble */
 	border-radius: 50%; /* rounded border forms a circle */
+}
+
+.gbg {
+    background-color: #2a2e32;
 }
