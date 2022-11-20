@@ -15,9 +15,11 @@ export default function SearchBar() {
                 id="default-search"
                 className="focus:ring-2 ring-blue-400 focus:outline-[0.5px] border-0 outline-none block p-4 pl-10 text-sm bg-black rounded-lg  w-[1122px] height-[73px] "
                 placeholder="Search" required
-                onChange={(e) => setSearchTerm(e.target.value)}
-                onFocus={(e) => setBubleSearch(true)}
-                onBlur={(e) => setBubleSearch(false)}
+                onChange={e => {
+                    setSearchTerm(e.target.value);
+                        setBubleSearch(e.target.value.length > 0);
+                    
+                }}
                 />
             </div>
         </navbar>
