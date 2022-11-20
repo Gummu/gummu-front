@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { Cover } from "./Cover";
 import { covers } from "../data";
 import SearchBar from "./SearchBar";
@@ -8,14 +8,20 @@ import NewRelease from "./NewRelease";
 import HeroSection from "./HeroSection";
 import AlbumCard from "./AlbumCard";
 import LaylowCard from "./LaylowCard";
-import BubbleSearch from "./BubbleSearch"
+import BubbleSearch from "./BubbleSearch";
 
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import { StatesContext } from "../contexts/StatesProvider";
 
 function HomeContent() {
+    const { showBubleSearch } = useContext(StatesContext);
+
     return (
-        <div className="flex overflow-auto flex-col p-5 pb-24 w-full bg-black content grow">
+        <div
+            className={`${
+                !showBubleSearch ? "flex" : "hidden"
+            } overflow-auto flex-col p-5 pb-24 w-full grow content`}
+        >
             <div className="flex">
                 <div className="mt-4 mr-10 ml-4">
                     <HeroSection />
@@ -174,54 +180,52 @@ function ArtistProfile() {
                 </div>
                 {/* 2 */}
                 <div className="h-[300px] grow flex flex-col pt-12">
-                <div className="w-full h-20">
-                            <div className="flex w-full h-full hover:bg-dark_alt">
-                                <div className="my-auto">
-                                    <div className="ml-10 w-12 h-12 flex">
-                                        <img src="/laylow6.jpeg" alt="pp" />
-                                        <div className="ml-2 my-auto">
-                                            <h3 className="text-sm ml-4">
-                                                10'
-                                            </h3>
-                                        </div>
+                    <div className="w-full h-20">
+                        <div className="flex w-full h-full hover:bg-dark_alt">
+                            <div className="my-auto">
+                                <div className="ml-10 w-12 h-12 flex">
+                                    <img src="/laylow6.jpeg" alt="pp" />
+                                    <div className="ml-2 my-auto">
+                                        <h3 className="text-sm ml-4">10'</h3>
                                     </div>
                                 </div>
-                                <div className="flex-1"></div>
-                                <div className="my-auto mr-10">3:58</div>
                             </div>
+                            <div className="flex-1"></div>
+                            <div className="my-auto mr-10">3:58</div>
                         </div>
-                        <div className="w-full h-20">
-                            <div className="flex w-full h-full hover:bg-dark_alt">
-                                <div className="my-auto">
-                                    <div className="ml-10 w-12 h-12 flex">
-                                        <img src="/laylow1.jpeg" alt="pp" />
-                                        <div className="ml-2 my-auto">
-                                            <h3 className="text-sm ml-4 w-60">
-                                                R9R-Line (ft Damso)
-                                            </h3>
-                                        </div>
+                    </div>
+                    <div className="w-full h-20">
+                        <div className="flex w-full h-full hover:bg-dark_alt">
+                            <div className="my-auto">
+                                <div className="ml-10 w-12 h-12 flex">
+                                    <img src="/laylow1.jpeg" alt="pp" />
+                                    <div className="ml-2 my-auto">
+                                        <h3 className="text-sm ml-4 w-60">
+                                            R9R-Line (ft Damso)
+                                        </h3>
                                     </div>
                                 </div>
-                                <div className="flex-1"></div>
-                                <div className="my-auto mr-10">2:39</div>
                             </div>
+                            <div className="flex-1"></div>
+                            <div className="my-auto mr-10">2:39</div>
                         </div>
-                        <div className="w-full h-20">
-                            <div className="flex w-full h-full hover:bg-dark_alt">
-                                <div className="my-auto">
-                                    <div className="ml-10 w-12 h-12 flex">
-                                        <img src="/laylow2.jpeg" alt="pp" />
-                                        <div className="ml-2 my-auto">
-                                            <h3 className="text-sm ml-4">
-                                                MEGATRON
-                                            </h3>
-                                        </div>
+                    </div>
+                    <div className="w-full h-20">
+                        <div className="flex w-full h-full hover:bg-dark_alt">
+                            <div className="my-auto">
+                                <div className="ml-10 w-12 h-12 flex">
+                                    <img src="/laylow2.jpeg" alt="pp" />
+                                    <div className="ml-2 my-auto">
+                                        <h3 className="text-sm ml-4">
+                                            MEGATRON
+                                        </h3>
                                     </div>
                                 </div>
-                                <div className="flex-1"></div>
-                                <div className="my-auto mr-10">2:45</div>
                             </div>
+                            <div className="flex-1"></div>
+                            <div className="my-auto mr-10">2:45</div>
                         </div>
+                    </div>
                 </div>
             </div>
             <div className="profile-page min-h-[300px] flex mt-6">
@@ -233,19 +237,19 @@ function ArtistProfile() {
     );
 }
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <HomeContent />,
-    },
-    {
-        path: "/artist",
-        element: <ArtistProfile />,
-    },
-]);
-
 export default function Home() {
-    const {showBubleSearch} = useContext(StatesContext);
+    const { showBubleSearch } = useContext(StatesContext);
+
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <HomeContent />,
+        },
+        {
+            path: "/artist",
+            element: <ArtistProfile />,
+        },
+    ]);
 
     return (
         <div className="flex overflow-y-auto overflow-x-hidden flex-col min-h-screen max-h-screen text-white bg-dark">
@@ -259,33 +263,13 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className={`${(showBubleSearch) ? 'flex' : 'hidden'} overflow-auto flex-col w-full grow content`}>
-                    <BubbleSearch/>
+                <div
+                    className={`${
+                        showBubleSearch ? "flex" : "hidden"
+                    } overflow-auto flex-col w-full grow content`}
+                >
+                    <BubbleSearch />
                 </div>
-
-                <div className={`${(!showBubleSearch) ? 'flex' : 'hidden'} overflow-auto flex-col p-5 pb-24 w-full grow content`}>
-                    <div className="flex">
-                        <div className="mt-4 mr-10 ml-4">
-                            <HeroSection />
-                        </div>
-
-                        <div className="mt-4 w-6/12">
-                            <TopSongs />
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col mt-7 max-w-screen">
-                        <div className="mb-2 ml-5 text-2xl">
-                            <h2>New releases</h2>
-                        </div>
-                        <NewRelease />
-                        <div className="mb-2 ml-5 text-2xl">
-                            <h2>Top 15</h2>
-                        </div>
-                        <AlbumCard />
-                    </div>
-                </div>
-
             </div>
 
             <RouterProvider router={router} />
