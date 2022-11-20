@@ -1,7 +1,56 @@
 import React from "react";
 import LaylowCard from "./LaylowCard";
+import {
+    ClientFactory,
+    INodeStatus,
+    IAccount,
+    DefaultProviderUrls,
+    IDatastoreEntryInput,
+    IContractStorageData,
+} from "@massalabs/massa-web3";
+
+const baseAccount = {
+  publicKey: "P12f2K8YoeqZCzWASs2wktFYYGtaHGYaeSukFBrgEnw9d3J1WsMZ",
+  secretKey: "S17Zw8KN3QSzsWGof7PTgkTvyGYbZLNMZmjC4urr6ZziLonThqk",
+  address: "A1qZL4iJYRDRo9EtDauJuWNj56FNXWhtKinv15GEakraBa91dEA",
+};
+
+const sc_addr = "A12egHo2xkg2s68WJzu8CofoZ9vwz2M3dYhcsxZ6PCqqXoJCST4q"
 
 export default function ArtistProfile() {
+
+    const handleClick = () => {
+        ClientFactory.createDefaultClient(
+            DefaultProviderUrls.TESTNET,
+            false,
+            baseAccount
+        ).then(function (web3Client) {
+            web3Client.smartContracts().callSmartContract(
+                {
+                    /// storage fee for taking place in books
+                    fee: 0,
+                    /// The maximum amount of gas that the execution of the contract is allowed to cost.
+                    maxGas: 70000000,
+                    /// The price per unit of gas that the caller is willing to pay for the execution.
+                    gasPrice: 0,
+                    /// Extra coins that are spent from the caller's balance and transferred to the target
+                    coins: 5,
+                    /// Target smart contract address
+                    targetAddress: sc_addr,
+                    /// Target function name. No function is called if empty.
+                    functionName: "play",
+                    /// Parameter to pass to the target function
+                    parameter: "" //call_params.serialize()
+                },
+                baseAccount
+            ).then(function (txid) {
+                console.log("handleClick ", txid);
+            });
+        });
+    }
+
+
+
     return (
         <div className="flex overflow-auto flex-col p-5 pb-24 w-screen bg-black content grow">
             <div className="profile-page min-h-[300px] flex">
