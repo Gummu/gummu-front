@@ -3,7 +3,7 @@ import React from "react";
 
 export default function DashboardGraph() {
     return (
-        <svg width="830" height="378" viewBox="0 0 830 378" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 830 378" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_b_271_777)">
                 <rect width="830" height="378" rx="15" fill="#33373B" fill-opacity="0.37" />
                 <g filter="url(#filter1_b_271_777)">
