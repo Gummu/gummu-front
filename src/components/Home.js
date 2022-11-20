@@ -11,15 +11,15 @@ import BubbleSearch from "./BubbleSearch";
 import ArtistProfile from "./ArtistProfile";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import { StatesContext } from "../contexts/StatesProvider";
+import DashboardCard from "./DashboardCard";
 
 function HomeContent() {
     const { showBubleSearch } = useContext(StatesContext);
 
     return (
         <div
-            className={`${
-                !showBubleSearch ? "flex" : "hidden"
-            } overflow-auto flex-col p-5 pb-24 w-full grow content`}
+            className={`${!showBubleSearch ? "flex" : "hidden"
+                } overflow-auto flex-col p-5 pb-24 w-full grow content`}
         >
             <div className="flex">
                 <div className="mt-4 mr-10 ml-4">
@@ -30,7 +30,6 @@ function HomeContent() {
                     <TopSongs />
                 </div>
             </div>
-
             <div className="flex flex-col mt-7 max-w-screen">
                 <div className="mb-2 ml-5 text-2xl">
                     <h2>New releases</h2>
@@ -72,9 +71,8 @@ export default function Home() {
                 </div>
 
                 <div
-                    className={`${
-                        showBubleSearch ? "flex" : "hidden"
-                    } overflow-auto flex-col w-full grow content`}
+                    className={`${showBubleSearch ? "flex" : "hidden"
+                        } overflow-auto flex-col w-full grow content`}
                 >
                     <BubbleSearch />
                 </div>
