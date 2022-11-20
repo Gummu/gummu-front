@@ -22,7 +22,13 @@ const artists = [
     "Modest mouse",
     "Kings of leon",
     "MGMT",
-    "Laylow"
+    "Laylow",
+    "Lomepal",
+    "Luv Resval",
+    "La fève",
+    "Lil Nas X",
+    "Lil Uzi Vert",
+    "Leto",
 ]
 
 const album = [
@@ -32,12 +38,13 @@ const album = [
     , "Blood Red Shoes", "Ghosts On Tape", "Velveteen", "The Sherlocks", "World I Understand", "Years & Years"
     , "Night Call", "Polydor", "Band Of Horses", "Things Are Great", "BMG", "Boy Harsher", "The Runner"
     , "Nude Club/City Slang", "Anna Ash", "Sleeper", "Black Mesa", "Miles Kane", "Change The Show"
-    , "Eeels", "Extreme Witchcraft", "E Works", "Thyla"
+    , "Eeels", "Extreme Witchcraft", "E Works", "Thyla","LMF","Les étoiles vagabondes","L'étrange Histoire de Mr Anderson"
+    ,"La fête est finie","Le monde Chico","La zone en personne"
 ]
 
 const genre = [
     "Alternative", "Indie", "Rock", "Pop", "Punk", "Metal", "Rap", "Hip-Hop", "Jazz", "Blues", "Folk", "Country",
-     "Electronic", "Techno", "House", "Dance", "Reggae", "Soul", "R&B", "Funk"
+     "Electronic", "Techno", "House", "Dance", "Reggae", "Soul", "R&B", "Funk","Love","Latin","LO-FI,","Lounge",
 ]
 
 export function StatesProvider(props) {
