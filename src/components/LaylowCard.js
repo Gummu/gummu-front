@@ -2,13 +2,6 @@ import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
-import album1 from "../images/laylow1.jpeg";
-import album2 from "../images/laylow2.jpeg";
-import album3 from "../images/laylow3.jpeg";
-import album4 from "../images/laylow4.jpeg";
-import album5 from "../images/laylow5.jpeg";
-import album6 from "../images/laylow6.jpeg";
-
 function AlbumCard(props) {
     return (
         <div className="flex-1 flex w-[210px] h-[240px] flex-col space-y-[1px] albumcard !justify-center">
@@ -33,12 +26,12 @@ const responsive = {
 };
 
 const items = [
-    <AlbumCard image={album1} title={"LHDMA"} />,
-    <AlbumCard image={album2} title={"Trinity"} />,
-    <AlbumCard image={album3} title={".RAZ-Z"} />,
-    <AlbumCard image={album4} title={".RAW"} />,
-    <AlbumCard image={album5} title={"Digitalova"} />,
-    <AlbumCard image={album6} title={"Mercy"} />,
+    <AlbumCard image={"/laylow1.jpeg"} title={"LHDMA"} />,
+    <AlbumCard image={"/laylow2.jpeg"} title={"Trinity"} />,
+    <AlbumCard image={"/laylow3.jpeg"} title={".RAZ-Z"} />,
+    <AlbumCard image={"/laylow4.jpeg"} title={".RAW"} />,
+    <AlbumCard image={"/laylow5.jpeg"} title={"Digitalova"} />,
+    <AlbumCard image={"/laylow6.jpeg"} title={"Mercy"} />,
 ];
 
 export default function LaylowCard() {
