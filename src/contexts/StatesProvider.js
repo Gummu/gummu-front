@@ -54,6 +54,7 @@ export function StatesProvider(props) {
     const [url , setUrl] = useState("");
     const [isPlaying, setIsPlaying] = useState(false);
     const [audio, _] = useState(new Audio(url));
+
     const togglePlay = () => {
         setIsPlaying(!isPlaying);
         play();
