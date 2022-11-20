@@ -17,9 +17,9 @@ import {
 import styles from "./notification.css";
 
 const baseAccount = {
-  publicKey: "P1hq7KEL1XjPTbvHRJA2UyeFnJZMmRkH8FhwHBPaWAnn9gKuTG3",
-  secretKey: "S1ZCn15ucckWfXm4kjSNKwxFEVvoKWM44schtosLBQejuANtFbq",
-  address: "A12B4Cv6kxZHtqTb5w3YXhMLEWVWrL7hGQ9Tu4n4BDqfAAnqC46M",
+    publicKey: "P1hq7KEL1XjPTbvHRJA2UyeFnJZMmRkH8FhwHBPaWAnn9gKuTG3",
+    secretKey: "S1ZCn15ucckWfXm4kjSNKwxFEVvoKWM44schtosLBQejuANtFbq",
+    address: "A12B4Cv6kxZHtqTb5w3YXhMLEWVWrL7hGQ9Tu4n4BDqfAAnqC46M",
 };
 
 const sc_addr = "A12PMpbLiheaBVkesfBLhBetzGCtV9qk1YPi3onVcR8ZPfAT2qa1";
@@ -27,30 +27,61 @@ const sc_addr = "A12PMpbLiheaBVkesfBLhBetzGCtV9qk1YPi3onVcR8ZPfAT2qa1";
 
 export default function ArtistProfile() {
 
-const notify = () =>
-  toast.custom(
-    (t) => (
-      <div
-        className={classNames(["notificationWrapper",
-          t.visible ? "top-0" : "-top-96",
-        ])}
-      >
-        <div className={"iconWrapper"}>
-          <HiLightningBolt />
-        </div>
-        <div className={"contentWrapper"}>
-          <h1>Donation done!</h1>
-          <p>
-            You just donated 5 Massal to Laylow.
-          </p>
-        </div>
-        <div className={"closeIcon"} onClick={() => toast.dismiss(t.id)}>
-          <MdOutlineClose />
-        </div>
-      </div>
-    ),
-    { id: "unique-notification", position: "top-center" }
-  );
+    const playSong = () => {
+        ClientFactory.createDefaultClient(
+            DefaultProviderUrls.TESTNET,
+            false,
+            baseAccount
+        ).then(function (web3Client) {
+            web3Client.publicApi().getDatastoreEntries([{ address: sc_addr, key: "MEGATRON" }])
+                .then(function (res) {
+                    if (res && res[0]) {
+                        let urlArray = (res[0].candidate != null) ? res[0].candidate.split(',') : res[0];
+
+                        var audio = new Audio(urlArray[0]);
+                        audio.play();
+                        // let xIsNext = true;
+                        // let squares = Array(9).fill(null);
+                        // for (let vi = 0; vi < gameState.length; ++vi) {
+                        //   if (gameState[vi] === 'n') {
+                        //     squares[vi] = null;
+                        //   }
+                        //   else {
+                        //     squares[vi] = gameState[vi];
+                        //     xIsNext = !xIsNext;
+                        //   }
+                        // }
+                        // setSquares(squares);
+                        // setXIsNext(xIsNext);
+                    }
+                });
+        });
+    }
+
+    const notify = () =>
+        toast.custom(
+            (t) => (
+                <div
+                    className={classNames(["notificationWrapper",
+                        t.visible ? "top-0" : "-top-96",
+                    ])}
+                >
+                    <div className={"iconWrapper"}>
+                        <HiLightningBolt />
+                    </div>
+                    <div className={"contentWrapper"}>
+                        <h1>Donation done!</h1>
+                        <p>
+                            You just donated 5 Massal to Laylow.
+                        </p>
+                    </div>
+                    <div className={"closeIcon"} onClick={() => toast.dismiss(t.id)}>
+                        <MdOutlineClose />
+                    </div>
+                </div>
+            ),
+            { id: "unique-notification", position: "top-center" }
+        );
 
     const handleClick = () => {
         console.log("Donating")
@@ -87,7 +118,7 @@ const notify = () =>
 
     return (
         <div className="flex overflow-auto flex-col p-5 pb-24 w-screen bg-black content grow">
-            <Toaster/>
+            <Toaster />
             <div className="profile-page min-h-[300px] flex">
                 {/* 1 */}
                 <div className="w-[300px] h-[300px]flex-none">
@@ -118,9 +149,9 @@ const notify = () =>
                                 Subscribe
                             </button>
                             <button className="px-4 py-2 mr-2 mb-6 text-white bg-black rounded-full border hover:bg-violet-600">
-                                Join
+                                Join€€
                             </button>
-                            <button className="px-4 py-2 mb-6 text-white bg-black rounded-full border hover:bg-yellow-600" onClick={(e) => {notify();}}>
+                            <button className="px-4 py-2 mb-6 text-white bg-black rounded-full border hover:bg-yellow-600" onClick={(e) => { notify(); }}>
                                 Donate
                             </button>
                             <div className="grow"></div>
@@ -249,7 +280,7 @@ const notify = () =>
                             <div className="my-auto mr-10">2:39</div>
                         </div>
                     </div>
-                    <div className="w-full h-20">
+                    <div className="w-full h-20" onClick={(e) => playSong()}>
                         <div className="flex w-full h-full hover:bg-dark_alt">
                             <div className="my-auto">
                                 <div className="flex ml-10 w-12 h-12">
