@@ -1,31 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { StatesContext } from "../contexts/StatesProvider";
 
-export const Player = ({url}) => {
-    const [isPlaying, setIsPlaying] = useState(false);
+export const Player = () => {
+
     const [reader, setReader] = useState(0);
     const [sec, setSec] = useState(0);
-    const [audio] = useState(new Audio(url));
-    const togglePlay = () => {
-        setIsPlaying(!isPlaying);
-        play();
-    }
-    const play = () => {
-        if (isPlaying) {
-            audio.pause();
-        }
-        else {
-            audio.play();
-        }
-    }
+
+    const {setUrl, togglePlay, isPlaying} = useContext(StatesContext);
+
 
     return (
         <div className="w-screen">
 
             {/* music cover and title */}
             <div className="flex items-center h-24">
-                <div className="song w-52">
+                <div className="w-52 song">
                     <div className="flex items-center">
-                        <div className="w-24 h-24 p-4">
+                        <div className="p-4 w-24 h-24">
                             <img
                                 src="https://i.scdn.co/image/ab67656300005f1f301e998c4927b7d7a6c7b224"
                                 alt="cover"
@@ -40,8 +31,8 @@ export const Player = ({url}) => {
                 </div>
 
                 {/* play/pause button */}
-                <div className="player grow h-full flex flex-col pt-2">
-                    <div className="controls flex">
+                <div className="flex flex-col pt-2 h-full player grow">
+                    <div className="flex controls">
                         <div className="mx-auto">
                             <button className="">
                                 <img
@@ -68,7 +59,7 @@ export const Player = ({url}) => {
                             </button>
                         </div>
                      </div>
-                    <div className="progress flex">
+                    <div className="flex progress">
                         <div className="m-auto">
                             <input type="range" className="w-[1700px] max-w-screen-md range" value={reader} onChange={val => setReader(val)} max={sec}/>
                         </div>
@@ -76,7 +67,7 @@ export const Player = ({url}) => {
                 </div>
 
                 {/* volume and repeat */}
-                <div className="volume flex-none w-52 pt-10">
+                <div className="flex-none pt-10 w-52 volume">
                 </div>
             </div>
 
