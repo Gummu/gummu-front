@@ -12,6 +12,7 @@ import ArtistProfile from "./ArtistProfile";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import { StatesContext } from "../contexts/StatesProvider";
 import DashboardCard from "./DashboardCard";
+import Dashboard from "./Dashboard";
 
 function HomeContent() {
     const { showBubleSearch } = useContext(StatesContext);
@@ -56,6 +57,10 @@ export default function Home() {
             path: "/artist",
             element: <ArtistProfile />,
         },
+        {
+            path: "/dashboard",
+            element: <Dashboard />,
+        }
     ]);
 
     return (

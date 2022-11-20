@@ -111,7 +111,7 @@ export default function ArtistProfile() {
                                 each month.
                             </p>
                             <p className="mb-3 text-sm text-green-400">
-                                236 934 € / 1 000 000 € collected
+                                236 934 MASSA / 1 000 000 MASSA collected
                             </p>
                             <p className="mb-3 text-sm text-gray-300">
                                 <a href="#" className="underline">
