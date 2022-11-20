@@ -3,13 +3,9 @@ import {Bubble} from "react-bubble-ui-v2";
 import { StatesContext} from "../contexts/StatesProvider";
 
 function Child(props){
-    return (
-        <div className={`flex justify-center items-center ${props.color} child`}>
-			{props.name}
-        </div>
-
-    )
+	return <button onClick={() => window.location.href = `/artist`} className={`flex justify-center items-center ${props.color} child`}>{props.name}</button>
 }
+
 
 function Bubbles(props) {
     const {bublesData} = useContext(StatesContext);
