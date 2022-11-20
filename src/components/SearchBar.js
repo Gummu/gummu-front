@@ -1,3 +1,4 @@
+import { set } from "lodash";
 import React, { useContext } from "react";
 import { StatesContext } from "../contexts/StatesProvider";
 
@@ -16,8 +17,13 @@ export default function SearchBar() {
                 className="focus:ring-2 ring-blue-400 focus:outline-[0.5px] border-0 outline-none block p-4 pl-10 text-sm bg-black rounded-lg  w-[1122px] height-[73px] "
                 placeholder="Search" required
                 onChange={e => {
-                    setSearchTerm(e.target.value);
+                    if (e.target.value == "*") 
+                        setBubleSearch(true);
+                    
+                    else{
+                        setSearchTerm(e.target.value);
                         setBubleSearch(e.target.value.length > 0);
+                    }
                     
                 }}
                 />

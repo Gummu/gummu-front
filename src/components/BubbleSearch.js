@@ -37,6 +37,10 @@ function Bubbles(props) {
 		children.push(<Child className="child" key={i++} color={"bg-blue-500"} name={element}/>)
 	});
 
+	bublesData.genre.forEach(element => {
+		children.push(<Child className="child" key={i++} color={"bg-green-500"} name={element}/>)
+	});
+
 	children.sort(() => Math.random() - 0.5);
 
    return (

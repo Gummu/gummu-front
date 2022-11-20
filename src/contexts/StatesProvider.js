@@ -21,7 +21,8 @@ const artists = [
     "The white stripes",
     "Modest mouse",
     "Kings of leon",
-    "MGMT"
+    "MGMT",
+    "Laylow"
 ]
 
 const album = [
@@ -34,13 +35,19 @@ const album = [
     , "Eeels", "Extreme Witchcraft", "E Works", "Thyla"
 ]
 
+const genre = [
+    "Alternative", "Indie", "Rock", "Pop", "Punk", "Metal", "Rap", "Hip-Hop", "Jazz", "Blues", "Folk", "Country",
+     "Electronic", "Techno", "House", "Dance", "Reggae", "Soul", "R&B", "Funk"
+]
+
 export function StatesProvider(props) {
     const [showBubleSearch, setBubleSearch] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
 
     const bublesData = {
-        artists: artists.filter((elt) => elt.startsWith(searchTerm)),
-        album: album.filter((elt) => elt.startsWith(searchTerm))
+        artists: artists.filter((elt) => elt.toLowerCase().startsWith(searchTerm.toLowerCase())),
+        album: album.filter((elt) => elt.toLowerCase().startsWith(searchTerm.toLowerCase())),
+        genre: genre.filter((elt) => elt.toLowerCase().startsWith(searchTerm.toLowerCase())),
     }
     return (
         <StatesContext.Provider value={{showBubleSearch, setBubleSearch, bublesData, setSearchTerm}}>
