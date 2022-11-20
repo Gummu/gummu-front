@@ -76,7 +76,7 @@ export default function ArtistProfile() {
                     <div className={"contentWrapper"}>
                         <h1>Donation done!</h1>
                         <p>
-                            You just donated 5 Massal to Laylow.
+                            You just donated 0.5 Massa to Laylow.
                         </p>
                     </div>
                     <div className={"closeIcon"} onClick={() => toast.dismiss(t.id)}>
@@ -181,7 +181,7 @@ export default function ArtistProfile() {
                                 each month.
                             </p>
                             <p className="mb-3 text-sm text-green-400">
-                                236 934 MASSA / 1 000 000 MASSA collected
+                                233 MASSA / 1 000 MASSA collected
                             </p>
                             <p className="mb-3 text-sm text-gray-300">
                                 <a href="#" className="underline">
