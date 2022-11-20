@@ -1,4 +1,9 @@
 import React from "react";
+
+import classNames from "classnames";
+import toast, { Toaster } from "react-hot-toast";
+import { MdOutlineClose } from "react-icons/md";
+import { HiLightningBolt } from "react-icons/hi";
 import LaylowCard from "./LaylowCard";
 import {
     ClientFactory,
@@ -9,17 +14,46 @@ import {
     IContractStorageData,
 } from "@massalabs/massa-web3";
 
+import styles from "./notification.css";
+
 const baseAccount = {
-  publicKey: "P12f2K8YoeqZCzWASs2wktFYYGtaHGYaeSukFBrgEnw9d3J1WsMZ",
-  secretKey: "S17Zw8KN3QSzsWGof7PTgkTvyGYbZLNMZmjC4urr6ZziLonThqk",
-  address: "A1qZL4iJYRDRo9EtDauJuWNj56FNXWhtKinv15GEakraBa91dEA",
+  publicKey: "P1hq7KEL1XjPTbvHRJA2UyeFnJZMmRkH8FhwHBPaWAnn9gKuTG3",
+  secretKey: "S1ZCn15ucckWfXm4kjSNKwxFEVvoKWM44schtosLBQejuANtFbq",
+  address: "A12B4Cv6kxZHtqTb5w3YXhMLEWVWrL7hGQ9Tu4n4BDqfAAnqC46M",
 };
 
-const sc_addr = "A12egHo2xkg2s68WJzu8CofoZ9vwz2M3dYhcsxZ6PCqqXoJCST4q"
+const sc_addr = "A12PMpbLiheaBVkesfBLhBetzGCtV9qk1YPi3onVcR8ZPfAT2qa1";
+
 
 export default function ArtistProfile() {
 
+const notify = () =>
+  toast.custom(
+    (t) => (
+      <div
+        className={classNames(["notificationWrapper",
+          t.visible ? "top-0" : "-top-96",
+        ])}
+      >
+        <div className={"iconWrapper"}>
+          <HiLightningBolt />
+        </div>
+        <div className={"contentWrapper"}>
+          <h1>Donation done!</h1>
+          <p>
+            You just donated 5 Massal to Laylow.
+          </p>
+        </div>
+        <div className={"closeIcon"} onClick={() => toast.dismiss(t.id)}>
+          <MdOutlineClose />
+        </div>
+      </div>
+    ),
+    { id: "unique-notification", position: "top-center" }
+  );
+
     const handleClick = () => {
+        console.log("Donating")
         ClientFactory.createDefaultClient(
             DefaultProviderUrls.TESTNET,
             false,
@@ -38,7 +72,7 @@ export default function ArtistProfile() {
                     /// Target smart contract address
                     targetAddress: sc_addr,
                     /// Target function name. No function is called if empty.
-                    functionName: "play",
+                    functionName: "donate",
                     /// Parameter to pass to the target function
                     parameter: "" //call_params.serialize()
                 },
@@ -53,6 +87,7 @@ export default function ArtistProfile() {
 
     return (
         <div className="flex overflow-auto flex-col p-5 pb-24 w-screen bg-black content grow">
+            <Toaster/>
             <div className="profile-page min-h-[300px] flex">
                 {/* 1 */}
                 <div className="w-[300px] h-[300px]flex-none">
@@ -85,7 +120,7 @@ export default function ArtistProfile() {
                             <button className="px-4 py-2 mr-2 mb-6 text-white bg-black rounded-full border hover:bg-violet-600">
                                 Join
                             </button>
-                            <button className="px-4 py-2 mb-6 text-white bg-black rounded-full border hover:bg-yellow-600">
+                            <button className="px-4 py-2 mb-6 text-white bg-black rounded-full border hover:bg-yellow-600" onClick={(e) => {notify();}}>
                                 Donate
                             </button>
                             <div className="grow"></div>
