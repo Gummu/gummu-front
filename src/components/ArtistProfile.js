@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import classNames from "classnames";
 import toast, { Toaster } from "react-hot-toast";
@@ -15,6 +15,7 @@ import {
 } from "@massalabs/massa-web3";
 
 import styles from "./notification.css";
+import { StatesContext } from "../contexts/StatesProvider";
 
 const baseAccount = {
     publicKey: "P1hq7KEL1XjPTbvHRJA2UyeFnJZMmRkH8FhwHBPaWAnn9gKuTG3",
@@ -22,10 +23,10 @@ const baseAccount = {
     address: "A12B4Cv6kxZHtqTb5w3YXhMLEWVWrL7hGQ9Tu4n4BDqfAAnqC46M",
 };
 
-const sc_addr = "A12PMpbLiheaBVkesfBLhBetzGCtV9qk1YPi3onVcR8ZPfAT2qa1";
-
+const sc_addr = "A12rLAL7EvjPknQgTuqdRk6GBeKC2Ppm8QePjm9v3F2GQ1b6nDZw"
 
 export default function ArtistProfile() {
+    const {setUrl, togglePlay} = useContext(StatesContext);
 
     const playSong = () => {
         ClientFactory.createDefaultClient(
@@ -38,8 +39,11 @@ export default function ArtistProfile() {
                     if (res && res[0]) {
                         let urlArray = (res[0].candidate != null) ? res[0].candidate.split(',') : res[0];
 
-                        var audio = new Audio(urlArray[0]);
-                        audio.play();
+                        // var audio = new Audio(urlArray[0]);
+                        console.log(urlArray[0])
+                        setUrl(urlArray[0]);
+                        togglePlay();
+                        // audio.play();
                         // let xIsNext = true;
                         // let squares = Array(9).fill(null);
                         // for (let vi = 0; vi < gameState.length; ++vi) {

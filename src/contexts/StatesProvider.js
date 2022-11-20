@@ -44,13 +44,32 @@ export function StatesProvider(props) {
     const [showBubleSearch, setBubleSearch] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
 
+    const [url , setUrl] = useState("");
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [audio, _] = useState(new Audio(url));
+    const togglePlay = () => {
+        setIsPlaying(!isPlaying);
+        play();
+    }
+    const play = () => {
+        if (isPlaying) {
+            audio.pause();
+        }
+        else {
+            console.log("AUDIO", audio);
+            audio.src = url;
+            audio.play();
+        }
+    }
+
+
     const bublesData = {
         artists: artists.filter((elt) => elt.toLowerCase().startsWith(searchTerm.toLowerCase())),
         album: album.filter((elt) => elt.toLowerCase().startsWith(searchTerm.toLowerCase())),
         genre: genre.filter((elt) => elt.toLowerCase().startsWith(searchTerm.toLowerCase())),
     }
     return (
-        <StatesContext.Provider value={{showBubleSearch, setBubleSearch, bublesData, setSearchTerm}}>
+        <StatesContext.Provider value={{showBubleSearch, setBubleSearch, bublesData, setSearchTerm, togglePlay, setUrl, isPlaying}}>
             {props.children}
         </StatesContext.Provider>
     )
