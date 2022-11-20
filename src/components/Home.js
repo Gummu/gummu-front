@@ -8,8 +8,10 @@ import NewRelease from "./NewRelease";
 import HeroSection from "./HeroSection";
 import AlbumCard from "./AlbumCard";
 import LaylowCard from "./LaylowCard";
+import BubbleSearch from "./BubbleSearch"
 
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import { StatesContext } from "../contexts/StatesProvider";
 
 function HomeContent() {
     return (
@@ -243,6 +245,8 @@ const router = createBrowserRouter([
 ]);
 
 export default function Home() {
+    const {showBubleSearch} = useContext(StatesContext);
+
     return (
         <div className="flex overflow-y-auto overflow-x-hidden flex-col min-h-screen max-h-screen text-white bg-dark">
             <div className="flex flex-col max-h-screen bg-black app grow">

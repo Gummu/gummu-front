@@ -77,3 +77,9 @@ img {
     -o-user-select: none;
     user-select: none;
 }
+
+.child {
+	width: 100%; /* width expands to fit bubble */
+	height: 100%; /* width expands to fit bubble */
+	border-radius: 50%; /* rounded border forms a circle */
+}
