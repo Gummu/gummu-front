@@ -10,6 +10,11 @@ import {
     ON_MASSA_EVENT_DATA,
 } from "@massalabs/massa-web3";
 
+import classNames from "classnames";
+import toast, { Toaster } from "react-hot-toast";
+import { MdOutlineClose } from "react-icons/md";
+import { HiLightningBolt } from "react-icons/hi";
+
 const baseAccount = {
     address: 'A1w4M3obyZPSNmqogYJnQK5r986J3gKiSrTrBA5Gcvt4L4ooEk4',
     secretKey: 'S12cLb3fNW4SL9WPiVWHFwJSWJwvcWoni9H7F9RQssEYDCwiHy82',
@@ -18,19 +23,17 @@ const baseAccount = {
 
 const sc_addr = "A12rLAL7EvjPknQgTuqdRk6GBeKC2Ppm8QePjm9v3F2GQ1b6nDZw";
 
-
 const Dashboard = () => {
 
-    useEffect(() => {
 
         let eventPoller;
 
         const eventsFilter = {
             start: null,
             end: null,
-            original_caller_address: null,
+            original_caller_address: sc_addr,
             original_operation_id: null,
-            emitter_address: sc_addr,
+            emitter_address: null,
             is_final: null,
         };
 
@@ -39,7 +42,7 @@ const Dashboard = () => {
             false,
             baseAccount
         ).then(function (web3Client) {
-            
+
             const onEventData = (events) => {console.log("Event Data Received:" , events);}
 
 
@@ -49,24 +52,47 @@ const Dashboard = () => {
                 web3Client
             );
 
-            eventPoller.on(ON_MASSA_EVENT_DATA, onEventData);
+            eventPoller.on(ON_MASSA_EVENT_DATA, notify);
 
         });
 
-        return () => {
-            eventPoller.stop();
-        }
+    const notify = () =>
+        toast.custom(
+            (t) => (
+                <div
+                    className={classNames(["notificationWrapper",
+                        t.visible ? "top-0" : "-top-96",
+                    ])}
+                >
+                    <div className={"iconWrapper"}>
+                        <HiLightningBolt />
+                    </div>
+                    <div className={"contentWrapper"}>
+                        <h1>Donation received!</h1>
+                        <p>
+                            You just got a new donation!
+                        </p>
+                    </div>
+                    <div className={"closeIcon"} onClick={() => toast.dismiss(t.id)}>
+                        <MdOutlineClose />
+                    </div>
+                </div>
+            ),
+            { id: "unique-notification", position: "top-center" }
+        );
 
-    }, []);
+
 
     return (
-        <div className="w-screen bg-black pb-32 flex flex-col">
-            <div className="header h-20 flex">
+        <div className="flex flex-col pb-32 w-screen bg-black">
+
+            <Toaster />
+            <div className="flex h-20 header">
                 <div className="flex justify-center items-center px-5">
                     <h1 className="text-3xl">Dashboard</h1>
                 </div>
-                <div className="buttons flex-1"></div>
-                <div className="buttons flex-1 flex  items-center">
+                <div className="flex-1 buttons"></div>
+                <div className="flex flex-1 items-center buttons">
                     <button className="px-4 py-2 mr-4 text-white bg-black rounded-full border hover:bg-blue-600">
                         Upload
                     </button>
@@ -79,7 +105,7 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            <div className="body min-w-full min-h-full p-4 pb-28">
+            <div className="p-4 pb-28 min-w-full min-h-full body">
                 <div className="grid grid-cols-4 gap-4 content-center">
                     {/* 1 */}
                     <DashboardCard number={62} description={"Listners"}>
