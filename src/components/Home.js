@@ -78,10 +78,18 @@ export default function Home() {
                     <div className="m-auto">
                         <SearchBar />
                     </div>
+                    
+                    <a href="/dashboard" className="flex justify-center items-center mr-4 w-20">
 
-                    <div className="flex justify-center items-center mr-4 w-20">
-                        <img src="/user.png" alt="profile" className="w-9" />
-                    </div>
+                        <img
+                            src="/user.png"
+                            alt="profile"
+                            className="w-9"
+                            
+                        />
+                    </a>
+                    
+
                 </div>
 
                 <div

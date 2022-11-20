@@ -29,6 +29,10 @@ const artists = [
     "Lil Nas X",
     "Lil Uzi Vert",
     "Leto",
+    "La fouine",
+    "La rumeur",
+    "Larry",
+    "Lady Gaga"
 ]
 
 const album = [
@@ -39,7 +43,7 @@ const album = [
     , "Night Call", "Polydor", "Band Of Horses", "Things Are Great", "BMG", "Boy Harsher", "The Runner"
     , "Nude Club/City Slang", "Anna Ash", "Sleeper", "Black Mesa", "Miles Kane", "Change The Show"
     , "Eeels", "Extreme Witchcraft", "E Works", "Thyla","LMF","Les étoiles vagabondes","L'étrange Histoire de Mr Anderson"
-    ,"La fête est finie","Le monde Chico","La zone en personne"
+    ,"La fête est finie","Le monde Chico","La zone en personne","La vie est belle"
 ]
 
 const genre = [
