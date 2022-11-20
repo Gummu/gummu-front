@@ -67,9 +67,18 @@ export default function Home() {
         <div className="flex overflow-y-auto overflow-x-hidden flex-col min-h-screen max-h-screen text-white bg-dark">
             <div className="flex flex-col max-h-screen bg-black app grow">
                 <div className="flex w-full min-h-[5rem] h-20 searchbar bg-dark_alt">
+                    <a href="/" className="flex justify-center items-center mr-4 w-20">
+
+                        <img
+                            src="/GUMMU-removebg-preview.png"
+                            alt="logo"
+                            
+                        />
+                    </a>
                     <div className="m-auto">
                         <SearchBar />
                     </div>
+
                     <div className="flex justify-center items-center mr-4 w-20">
                         <img src="/user.png" alt="profile" className="w-9" />
                     </div>
