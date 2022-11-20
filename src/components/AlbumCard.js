@@ -15,7 +15,7 @@ import album10 from "../images/album10.png";
 
 function AlbumCard(props) {
     return (
-        <div className="flex-1 flex w-[153px] h-[210px] flex-col space-y-[5px] albumcard">
+        <div className="flex-1 flex w-[133px] h-[190px] flex-col space-y-[5px] albumcard">
             <img src={props.image} className="flex-none w-[153px] h-[153px] mb-[5px] rounded-2xl" alt="popo"/>
             <p className="flex-none font-Quicksand font-[400px] text-[12px] leading-[15px] text-white">{props.title}</p>
             <p className="flex-none font-Quicksand font-[400px] text-[12px] leading-[15px]">{props.artist}</p>
