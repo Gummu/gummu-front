@@ -2,8 +2,63 @@ import React from "react";
 import DashboardGraph from "./DashboardGraph";
 import DashboardCard from "./DashboardCard";
 import DashboardLastFunding from "./DashboardLastFunding";
+import { useEffect } from "react";
+import {
+    ClientFactory,
+    DefaultProviderUrls,
+    EventPoller,
+    ON_MASSA_EVENT_DATA,
+} from "@massalabs/massa-web3";
+
+const baseAccount = {
+    address: 'A1w4M3obyZPSNmqogYJnQK5r986J3gKiSrTrBA5Gcvt4L4ooEk4',
+    secretKey: 'S12cLb3fNW4SL9WPiVWHFwJSWJwvcWoni9H7F9RQssEYDCwiHy82',
+    publicKey: 'P12CtF7ZJ2nCoTKTk4dxALu9PfB1jC95Rgmzeqc8wbfaJ9Hu5X9T'
+  };
+
+const sc_addr = "A12rLAL7EvjPknQgTuqdRk6GBeKC2Ppm8QePjm9v3F2GQ1b6nDZw";
+
 
 const Dashboard = () => {
+
+    useEffect(() => {
+
+        let eventPoller;
+
+        const eventsFilter = {
+            start: null,
+            end: null,
+            original_caller_address: null,
+            original_operation_id: null,
+            emitter_address: sc_addr,
+            is_final: null,
+        };
+
+        ClientFactory.createDefaultClient(
+            DefaultProviderUrls.TESTNET,
+            false,
+            baseAccount
+        ).then(function (web3Client) {
+            
+            const onEventData = (events) => {console.log("Event Data Received:" , events);}
+
+
+            eventPoller = EventPoller.startEventsPolling(
+                eventsFilter,
+                1000,
+                web3Client
+            );
+
+            eventPoller.on(ON_MASSA_EVENT_DATA, onEventData);
+
+        });
+
+        return () => {
+            eventPoller.stop();
+        }
+
+    }, []);
+
     return (
         <div className="w-screen bg-black pb-32 flex flex-col">
             <div className="header h-20 flex">
