@@ -103,7 +103,7 @@ export default function ArtistProfile() {
                     /// The price per unit of gas that the caller is willing to pay for the execution.
                     gasPrice: 0,
                     /// Extra coins that are spent from the caller's balance and transferred to the target
-                    coins: 5,
+                    coins: 500_000_000,
                     /// Target smart contract address
                     targetAddress: sc_addr,
                     /// Target function name. No function is called if empty.
