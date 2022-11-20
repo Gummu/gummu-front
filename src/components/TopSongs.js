@@ -32,9 +32,9 @@ export default function TopSongs() {
     return (
         <div className="flex-1 flex flex-col space-y-[12px]">
             <p className="font-Quicksand text-[24px] leading-[120%] font-extrabold">Top Songs</p>
-            <ChartCard song={song1} title={"Golden age of 80s"} artist={"Sean swadder"} duration={"2:34:45"}/>
-            <ChartCard song={song2} title={"Reggae “n” blues"} artist={"Dj YK mule"} duration={"1:02:42"}/>
-            <ChartCard song={song3} title={"Tomorrow’s tunes"} artist={"Obi Datti"} duration={"2:01:25"}/>
+            <ChartCard song={song1} title={"Golden age of 80s"} artist={"Sean swadder"} duration={"2:34"}/>
+            <ChartCard song={song2} title={"Reggae “n” blues"} artist={"Dj YK mule"} duration={"1:02"}/>
+            <ChartCard song={song3} title={"Tomorrow’s tunes"} artist={"Obi Datti"} duration={"2:01"}/>
         </div>
     );
 }
